@@ -13,6 +13,7 @@
 
 body {
     font-family: var(--font);
+    background: var(--color-gray);
 }
 
 a {
@@ -320,27 +321,29 @@ a {
     border-color: white;
 }
 
-/*section-2*/
-.section-2 {
-    padding: 80px 0;
+/*section-3*/
+.section-3 {
+    padding: 20px 0;
     text-align: center;
     background: #fff;
 }
 
-.section-2 .inner-title {
+.section-3 .inner-title {
     font-size: 2rem;
     font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 2px solid black;
     margin-bottom: 50px;
     color: #333;
 }
 
-.section-2 .inner-box {
+.section-3 .inner-box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-.section-2 .box-item {
+.section-3 .box-item {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
@@ -349,17 +352,17 @@ a {
     cursor: pointer;
 }
 
-.section-2 .box-item:hover {
+.section-3 .box-item:hover {
     transform: translateY(-5px);
 }
 
-.section-2 .box-item img {
+.section-3 .box-item img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-.section-2 .box-item .overlay {
+.section-3 .box-item .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -368,7 +371,7 @@ a {
     background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6));
 }
 
-.section-2 .box-item .inner-content {
+.section-3 .box-item .inner-content {
     position: absolute;
     bottom: 20px;
     left: 20px;
@@ -377,7 +380,7 @@ a {
     text-align: left;
 }
 
-.section-2 .box-item .logo {
+.section-3 .box-item .logo {
     font-size: 1.1rem;
     font-weight: bold;
     color: #fff;
@@ -385,7 +388,7 @@ a {
     margin-bottom: 5px;
 }
 
-.section-2 .box-item .title {
+.section-3 .box-item .title {
     font-size: 1.6rem;
     font-weight: 600;
     color: #fff;
@@ -393,7 +396,7 @@ a {
     margin-bottom: 15px;
 }
 
-.section-2 .box-item .button {
+.section-3 .box-item .button {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -407,34 +410,35 @@ a {
     transition: background 0.3s ease;
 }
 
-.section-2 .box-item .button:hover {
+.section-3 .box-item .button:hover {
     background: #0056b3;
 }
 
-.section-2 .box-item .button i {
+.section-3 .box-item .button i {
     font-size: 1rem;
 }
 
 /* Responsive cho màn hình nhỏ */
 @media (max-width: 992px) {
-    .section-2 .inner-box {
+    .section-3 .inner-box {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .section-2 .inner-box {
+    .section-3 .inner-box {
         grid-template-columns: 1fr;
     }
 }
 
-/* section-3 */
-.section-3 {
-    padding: 50px 0;
+/* section-2 */
+.section-2 {
+    padding-top: 80px;
+    padding-bottom: 80px;
     /* background-color: var(--color-gray); */
 }
 
-.section-3 .inner-wrap {
+.section-2 .inner-wrap {
     background-color: var(--color-yellow);
     border-radius: 20px;
     padding: 30px;
@@ -442,7 +446,7 @@ a {
     margin: 0 auto;
 }
 
-.section-3 .inner-title {
+.section-2 .inner-title {
     text-align: center;
     font-size: 40px;
     font-weight: 700;
@@ -451,14 +455,14 @@ a {
     margin: 0 auto 40px auto;
 }
 
-.section-3 .inner-title i {
+.section-2 .inner-title i {
     color: red;
     margin-left: 10px;
     margin-right: 10px;
     font-size: 40px;
 }
 
-.section-3 .inner-main {
+.section-2 .inner-main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -469,10 +473,10 @@ a {
     margin-bottom: 50px;
 }
 
-.section-3 .inner-card {
+.section-2 .inner-card {
     background-color: #fff;
     border-radius: 10px;
-    width: 280px;
+    width: 250px;
     height: 380px;
     display: flex;
     flex-direction: column;
@@ -483,12 +487,12 @@ a {
     overflow: hidden;
 }
 
-.section-3 .inner-card:hover {
+.section-2 .inner-card:hover {
     transform: translateY(-5px);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
 }
 
-.section-3 .inner-card a {
+.section-2 .inner-card a {
     text-decoration: none;
     display: flex;
     flex-direction: column;
@@ -496,14 +500,14 @@ a {
     flex-grow: 1;
 }
 
-.section-3 .inner-card img {
+.section-2 .inner-card img {
     height: 280px;
     width: 100%;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
 }
 
-.section-3 .inner-card .inner-name {
+.section-2 .inner-card .inner-name {
     color: var(--color-text);
     padding: 10px 15px;
     margin: 0;
@@ -517,11 +521,11 @@ a {
     -webkit-box-orient: vertical;
 }
 
-.section-3 .inner-card .inner-name:hover {
+.section-2 .inner-card .inner-name:hover {
     color: var(--color-yellow);
 }
 
-.section-3 .inner-card .inner-price {
+.section-2 .inner-card .inner-price {
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
@@ -531,14 +535,14 @@ a {
     gap: 10px;
 }
 
-.section-3 .inner-card .inner-price .discount {
+.section-2 .inner-card .inner-price .discount {
     color: red;
     font-weight: 700;
     font-size: 16px;
     /* Tăng kích thước giá giảm */
 }
 
-.section-3 .inner-card .inner-price .first-price {
+.section-2 .inner-card .inner-price .first-price {
     color: var(--color-text);
     text-decoration: line-through;
 }
@@ -552,6 +556,11 @@ a {
 
 .button .button-3 {
     padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
     border-radius: 5px;
     background: #BE2C20;
     color: #fff;
@@ -563,7 +572,7 @@ a {
 }
 
 /* css cho mã giảm giá hình mũi tên */
-.section-3 .inner-card .inner-discount {
+.section-2 .inner-card .inner-discount {
     background-color: #BE2C20;
     position: absolute;
     top: 20px;
@@ -578,13 +587,13 @@ a {
     z-index: 10;
 }
 
-.section-3 .inner-card .inner-discount i {
+.section-2 .inner-card .inner-discount i {
     color: #EFC455;
     margin-right: 5px;
     font-size: 14px;
 }
 
-.section-3 .inner-card .inner-discount:after {
+.section-2 .inner-card .inner-discount:after {
     content: "";
     position: absolute;
     left: 0;
@@ -596,7 +605,7 @@ a {
     border-bottom: 18px solid transparent;
 }
 
-.section-3 .inner-card .inner-discount:before {
+.section-2 .inner-card .inner-discount:before {
     content: "";
     position: absolute;
     right: -20px;
@@ -610,19 +619,19 @@ a {
 
 /* Responsive cho màn hình nhỏ */
 @media (max-width: 1100px) {
-    .section-3 .inner-card {
+    .section-2 .inner-card {
         width: calc(50% - 30px);
         /* 2 cột trên màn hình trung bình */
     }
 }
 
 @media (max-width: 768px) {
-    .section-3 .inner-title {
+    .section-2 .inner-title {
         width: 90%;
         font-size: 30px;
     }
 
-    .section-3 .inner-card {
+    .section-2 .inner-card {
         width: 90%;
         /* 1 cột trên màn hình di động */
         margin: 0 auto;
@@ -631,9 +640,9 @@ a {
 
 /*section-4*/
 .section-4 {
-
-    padding: 50px 0px;
+    padding: 40px 0;
     margin-bottom: 40px;
+    background: #fff;
 }
 
 .section-4 .inner-wrap {
@@ -692,14 +701,11 @@ a {
     color: #fff;
 }
 
-
-
-
 /* footer */
 .footer {
     background-color: var(--color-gray);
-    padding: 30px 0;
-}
+    padding: 40px 0 20px 0;
+    margin-top: 40px;}
 
 .footer .inner-wrap {
     display: flex;
@@ -804,96 +810,3 @@ a {
     padding: 10px 0;
 }
 
-.section-5 {
-    padding: 50px 0;
-}
-
-.section-5 .inner-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: fixed;
-    top: 50%;
-    padding: 0;
-    margin: 0;
-}
-
-.section-5 .inner-box .box-item {
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-
-.section-5 .box-item .inner-main {
-    background-color: #88acdb;
-    padding: 20px;
-    border-radius: 8px;
-    border: 0;
-    height: 150px;
-    width: 250px;
-    position: relative;
-    margin-bottom: 30px;
-
-}
-
-.section-5 .box-item .inner-main .inner-content {
-    position: relative;
-    text-align: center;
-}
-
-.section-5 .inner-content::before {
-    content: "\f10d";
-    font-weight: 900;
-    font-family: "Font Awesome 6 Free";
-    color: #A5BFE0;
-    font-size: 20px;
-
-}
-
-.section-5 .inner-content::after {
-    content: "\f10e";
-    font-weight: 900;
-    font-family: "Font Awesome 6 Free";
-    color: #A5BFE0;
-    font-size: 20px;
-}
-
-
-.section-5 .box-item .inner-main::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: calc(50% - 20px);
-
-    /*tam giác*/
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 20px solid #A5BFE0;
-}
-
-.section-5 .box-item .inner-info {
-    text-align: center;
-}
-
-.section-5 .box-item img {
-    border-radius: 50%;
-    height: 80px;
-    width: 80px;
-    object-fit: cover;
-}
-
-.section-5 .box-item .inner-info .inner-name {
-    color: black;
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    margin-top: 20px;
-}
-
-.section-5 .box-item .inner-info .inner-position {
-    color: rgb(179, 171, 171);
-    margin-bottom: 0;
-    margin-top: 0;
-}

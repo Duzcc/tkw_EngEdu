@@ -12,13 +12,14 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    background: var(--color-gray);
+    background: #fff;
     margin: 0;
     padding-top: 150px;
 }
 
 /* css cho header */
 .header {
+    background: var(--color-gray);
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -447,3 +448,118 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* footer */
+.footer {
+    background-color: var(--color-gray);
+    padding: 40px 0 20px 0;
+    margin-top: 40px;}
+
+.footer .inner-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    gap: 20px;
+}
+
+.footer .inner-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 250px;
+}
+
+.footer .inner-logo img {
+    max-width: 100px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.footer .inner-logo .inner-title {
+    color: #4b0082;
+    font-size: 35px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.footer .inner-logo .inner-desc {
+    color: #666;
+    margin-top: 5px;
+}
+
+.footer .inner-info {
+    flex: 1 1 150px;
+}
+
+.footer .inner-info .inner-title {
+    color: #4b0082;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.footer .inner-info ul {
+    list-style-type: none;
+    padding: 0;
+    color: var(--color-text);
+}
+
+.footer .inner-info ul li {
+    margin-bottom: 10px;
+}
+
+.footer .inner-info ul li a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .inner-info ul li a:hover {
+    color: var(--color-yellow);
+}
+
+.social {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.social li {
+    list-style: none;
+}
+
+.social li a .inner-image {
+    height: 40px;
+    width: 40px;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.social li a .inner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer-top {
+    text-align: center;
+    background-color: var(--color-gray);
+}
+
+.footer-top h2 {
+    font-size: 15px;
+    margin: 0;
+    color: var(--color-text);
+    padding: 10px 0;
+}
+
+/* @media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+} */

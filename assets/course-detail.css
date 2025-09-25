@@ -11,7 +11,7 @@
 }
 
 body {
-    background: var(--color-gray);
+    background: #fff;
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
     padding-top: 150px; 
@@ -293,10 +293,11 @@ a {
 }
 
 .kindergarten-difference-section {
-    background: #fff; 
-    padding: 56px 0 32px 0;
+    background: #fff;
+    padding: 56px 0 60px 0;
 }
-.kindergarten-difference-section > div {
+
+.k-diff-inner-wrap {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -306,17 +307,16 @@ a {
     padding: 0 24px;
 }
 .kindergarten-diff-img {
-    flex: 1 1 600px;
-    min-width: 400px;
-    max-width: 650px;
+    flex: 1 1 400px;
+    min-width: 320px;
+    max-width: 550px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.kindergarten-diff-img img {
+.k-diff-image {
     width: 100%;
     max-width: 550px;
-    min-width: 340px;
     aspect-ratio: 4/3;
     object-fit: cover;
     border-radius: 32px;
@@ -326,7 +326,7 @@ a {
     flex: 2 1 520px;
     min-width: 320px;
 }
-.kindergarten-diff-content > div:first-child {
+.k-diff-title {
     font-size: 1.7rem;
     font-weight: 800;
     color: var(--color-primary-dark);
@@ -334,32 +334,47 @@ a {
     margin-bottom: 32px;
     text-transform: uppercase;
 }
-.kindergarten-diff-content ul {
+.k-diff-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-.kindergarten-diff-content li {
+.k-diff-list-item {
     display: flex;
     align-items: flex-start;
     gap: 14px;
     margin-bottom: 22px;
 }
-.kindergarten-diff-content li span:first-child {
+.k-diff-star {
     color: var(--color-yellow);
     font-size: 1.7rem;
     line-height: 1;
 }
-.kindergarten-diff-content li span:last-child {
+.k-diff-text {
     font-size: 1.22rem;
     color: var(--color-text);
     font-weight: 700;
 }
 
+
+@media (max-width: 900px) {
+    .k-diff-inner-wrap {
+        flex-direction: column-reverse; 
+        gap: 32px;
+    }
+    .kindergarten-diff-img {
+        min-width: 100%;
+    }
+    .k-diff-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
+
 /* Section Học Viên Xuất Sắc */
 .excellent-students-section {
-    background: var(--color-gray); 
-    padding: 56px 0 40px 0;
+    background: #fff; 
+    padding: 30px 0 40px 0;
 }
 .excellent-students-section > div {
     max-width: 1200px;
@@ -537,10 +552,11 @@ a {
     position: relative;
 }
 
+/* footer */
 .footer {
     background-color: var(--color-gray);
-    padding: 30px 0;
-}
+    padding: 40px 0 20px 0;
+    margin-top: 40px;}
 
 .footer .inner-wrap {
     display: flex;
@@ -567,13 +583,13 @@ a {
 }
 
 .footer .inner-logo .inner-title {
-    color: var(--color-primary-dark);
+    color: #4b0082;
     font-size: 35px;
     font-weight: 700;
     margin: 0;
 }
 
-.footer .inner-logo .inner-decs {
+.footer .inner-logo .inner-desc {
     color: #666;
     margin-top: 5px;
 }
@@ -583,7 +599,7 @@ a {
 }
 
 .footer .inner-info .inner-title {
-    color: var(--color-primary-dark);
+    color: #4b0082;
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 15px;
@@ -636,7 +652,6 @@ a {
 .footer-top {
     text-align: center;
     background-color: var(--color-gray);
-    border-top: 1px solid #ddd;
 }
 
 .footer-top h2 {
@@ -644,12 +659,6 @@ a {
     margin: 0;
     color: var(--color-text);
     padding: 10px 0;
-}
-
-@media (max-width: 1200px) {
-    .container {
-        max-width: 960px;
-    }
 }
 
 @media (max-width: 900px) {
