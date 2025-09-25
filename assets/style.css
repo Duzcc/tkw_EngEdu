@@ -201,6 +201,21 @@ a {
     width: 100%;
 }
 
+.header-main .inner-nav ul li a.btn-register {
+    background-color: #4b0082;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-main .inner-nav ul li a.btn-register:hover {
+    background-color: #EFC455;
+    color: #4b0082;
+    transform: translateY(-2px);
+    border-bottom: none;
+}
+
 /* Responsive cho màn hình nhỏ */
 @media (max-width: 768px) {
     .header-main .inner-wrap {

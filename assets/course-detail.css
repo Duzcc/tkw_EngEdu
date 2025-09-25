@@ -108,7 +108,7 @@ a {
 .header-main .inner-logo .inner-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--color-primary-dark);
+    color: #4b0082;
     text-decoration: none;
     margin-bottom: 5px;
 }
@@ -137,9 +137,8 @@ a {
     position: relative;
 }
 
-.header-main .inner-nav ul li a:hover,
-.header-main .inner-nav ul li a.active {
-    color: var(--color-primary-dark);
+.header-main .inner-nav ul li a:hover {
+    color: #4b0082;
 }
 
 .header-main .inner-nav ul li a::after {
@@ -149,13 +148,49 @@ a {
     bottom: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-primary-dark);
+    background-color: #4b0082;
     transition: width 0.3s ease;
 }
 
-.header-main .inner-nav ul li a:hover::after,
-.header-main .inner-nav ul li a.active::after {
+.header-main .inner-nav ul li a:hover::after {
     width: 100%;
+}
+
+.header-main .inner-nav ul li a.btn-register {
+    background-color: #4b0082;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-main .inner-nav ul li a.btn-register:hover {
+    background-color: #EFC455;
+    color: #4b0082;
+    transform: translateY(-2px);
+    border-bottom: none;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+
+    body {
+        padding-top: 90px;
+    }
+
+    .header-main .inner-wrap {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-main .inner-logo {
+        margin-bottom: 20px;
+    }
+
+    .header-main .inner-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 .hero-kindergarten {
