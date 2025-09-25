@@ -1,13 +1,11 @@
-/* Định nghĩa các biến màu */
 :root {
     --color-yellow: #EFC455;
     --color-gray: #F5F6F8;
     --color-text: #404041;
-    --color-primary-dark: #4b0082; /* Tím đậm (Indigo/Purple) */
-    --color-sale: #BE2C20; /* Màu Đỏ cho sale - Giả định từ file index.html trước đó */
+    --color-primary-dark: #4b0082;
+    --color-sale: #BE2C20; 
 }
 
-/* Reset và Base Styles */
 * {
     box-sizing: border-box;
 }
@@ -16,7 +14,6 @@ body {
     background: var(--color-gray);
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    /* Thêm padding top để tránh Header cố định che mất nội dung */
     padding-top: 150px; 
 }
 
@@ -32,10 +29,6 @@ a {
     margin-right: auto;
 }
 
-/* ========================================================= */
-/* CSS CHUNG CHO HEADER */
-/* ========================================================= */
-
 .header {
     position: fixed;
     width: 100%;
@@ -44,7 +37,6 @@ a {
     left: 0;
 }
 
-/* Header Top Bar */
 .header-top {
     background-color: var(--color-gray);
     color: var(--color-text);
@@ -166,10 +158,6 @@ a {
     width: 100%;
 }
 
-/* ========================================================= */
-/* CSS TRANG CHI TIẾT KHÓA HỌC (MẦM NON) */
-/* ========================================================= */
-
 .hero-kindergarten {
     display: flex;
     flex-wrap: wrap;
@@ -178,12 +166,12 @@ a {
     max-width: 1200px;
     margin: 48px auto 0 auto;
     padding: 0 24px;
-    gap: 48px; /* Điều chỉnh gap lớn hơn cho hero */
+    gap: 48px; 
 }
 .hero-kindergarten-text {
-    flex: 1 1 480px; /* Điều chỉnh flex-basis */
+    flex: 1 1 480px; 
     min-width: 320px;
-    max-width: 600px; /* Điều chỉnh max-width */
+    max-width: 600px; 
 }
 .hero-kindergarten-title {
     font-size: 2.5rem;
@@ -269,7 +257,6 @@ a {
     font-weight: 500;
 }
 
-/* Section Khác Biệt */
 .kindergarten-difference-section {
     background: #fff; 
     padding: 56px 0 32px 0;
@@ -395,7 +382,6 @@ a {
     text-align: center;
 }
 
-/* Section Đăng Ký Tư Vấn */
 .register-section-flex {
     display: flex;
     align-items: center;
@@ -516,10 +502,6 @@ a {
     position: relative;
 }
 
-/* ========================================================= */
-/* CSS CHUNG CHO FOOTER */
-/* ========================================================= */
-
 .footer {
     background-color: var(--color-gray);
     padding: 30px 0;
@@ -629,10 +611,6 @@ a {
     padding: 10px 0;
 }
 
-/* ========================================================= */
-/* MEDIA QUERIES (RESPONSIVE) */
-/* ========================================================= */
-
 @media (max-width: 1200px) {
     .container {
         max-width: 960px;
@@ -693,10 +671,10 @@ a {
 @media (max-width: 768px) {
     /* Header Responsive */
     .header-top {
-        display: none; /* Ẩn Top Bar trên mobile để tiết kiệm không gian */
+        display: none;
     }
     body {
-        padding-top: 90px; /* Điều chỉnh padding top khi header-top bị ẩn */
+        padding-top: 90px;
     }
     .header-main .inner-wrap {
         flex-direction: column;
@@ -730,7 +708,6 @@ a {
         font-size: 28px;
     }
 
-    /* Khóa học Mầm non - Fix nhỏ */
     .excellent-students-list {
         gap: 24px;
     }

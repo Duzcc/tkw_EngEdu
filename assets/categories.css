@@ -1,25 +1,19 @@
-/* 1. Imports và Variables được đồng bộ với Index CSS */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Slabo+27px&display=swap');
 
 
 :root {
     font-family: "Roboto", sans-serif;
     --color-yellow: #EFC455;
-    /* Màu Vàng Nổi bật */
     --color-gray: #F5F6F8;
     --color-text: #404041;
     --color-primary-dark: #4b0082;
-    /* Màu Tím/Indigo đậm từ logo Index */
     --color-action-red: #BE2C20;
 }
 
-/* Base Styles: SỬA TẠI ĐÂY */
 body {
     font-family: "Roboto", sans-serif;
     background: var(--color-gray);
     margin: 0;
-    /* FIX LỖI HEADER CHE MẤT NỘI DUNG: */
-    /* Thêm padding-top bằng chiều cao ước tính của Header (Header Top + Header Main) */
     padding-top: 150px;
 }
 
@@ -244,9 +238,7 @@ body {
 .course-card {
     background: #fff;
     border-radius: 10px;
-    /* Bo góc nhẹ hơn cho phù hợp với Index */
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    /* Đồng bộ bóng đổ */
     overflow: hidden;
     width: 320px;
     display: flex;
@@ -257,7 +249,6 @@ body {
 
 .course-card:hover {
     transform: translateY(-5px);
-    /* Hiệu ứng nhô lên đồng bộ */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -281,14 +272,12 @@ body {
     font-weight: bold;
     margin-bottom: 10px;
     color: var(--color-primary-dark);
-    /* Dùng màu Tím đậm */
     text-align: center;
 }
 
 .course-description {
     font-size: 0.95rem;
     color: #666;
-    /* Dùng màu xám tối */
     margin-bottom: 20px;
     text-align: center;
     line-height: 1.4;
@@ -313,7 +302,6 @@ body {
     transform: scale(1.03);
 }
 
-/* Nút chính (btn-main) - Dùng màu Vàng nổi bật */
 .btn-main {
     background: var(--color-yellow);
     color: var(--color-text);
@@ -343,7 +331,6 @@ body {
     padding: 18px;
     background: var(--color-gray);
     border-left: 6px solid var(--color-primary-dark);
-    /* Viền màu Tím */
     border-radius: 8px;
     transition: transform 0.25s;
 }
@@ -351,10 +338,8 @@ body {
 .course-list li:hover {
     transform: translateX(6px);
     background: #e6e9ee;
-    /* Nền xám sáng hơn */
 }
 
-/* Dropdown */
 .dropdown {
     position: relative;
     display: inline-block;
