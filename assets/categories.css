@@ -1,0 +1,449 @@
+/* 1. Imports và Variables được đồng bộ với Index CSS */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Slabo+27px&display=swap');
+
+
+:root {
+    font-family: "Roboto", sans-serif;
+    --color-yellow: #EFC455;
+    /* Màu Vàng Nổi bật */
+    --color-gray: #F5F6F8;
+    --color-text: #404041;
+    --color-primary-dark: #4b0082;
+    /* Màu Tím/Indigo đậm từ logo Index */
+    --color-action-red: #BE2C20;
+}
+
+/* Base Styles: SỬA TẠI ĐÂY */
+body {
+    font-family: "Roboto", sans-serif;
+    background: var(--color-gray);
+    margin: 0;
+    /* FIX LỖI HEADER CHE MẤT NỘI DUNG: */
+    /* Thêm padding-top bằng chiều cao ước tính của Header (Header Top + Header Main) */
+    padding-top: 150px;
+}
+
+/* css cho header */
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+
+/* Header Top Bar */
+.header-top {
+    background-color: #F5F6F8;
+    color: #404041;
+    font-size: 13px;
+    padding: 10px 0;
+}
+
+.header-top .inner-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header-top .inner-contact {
+    display: flex;
+    align-items: center;
+}
+
+.header-top .inner-contact .inner-phone,
+.header-top .inner-contact .inner-location {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.header-top .inner-contact i {
+    color: #EFC455;
+    margin-right: 5px;
+}
+
+.header-top .inner-social ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.header-top .inner-social ul li a {
+    color: #404041;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.header-top .inner-social ul li a:hover {
+    color: #EFC455;
+}
+
+/* Header Main */
+.header-main {
+    padding: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-main .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header-main .inner-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-main .inner-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-main .inner-logo img {
+    height: 50px;
+    width: auto;
+}
+
+.header-main .inner-logo .inner-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-main .inner-logo .inner-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4b0082;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.header-main .inner-logo .inner-decs {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.header-main .inner-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.header-main .inner-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.header-main .inner-nav ul li a:hover {
+    color: #4b0082;
+}
+
+.header-main .inner-nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4b0082;
+    transition: width 0.3s ease;
+}
+
+.header-main .inner-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+
+    body {
+        padding-top: 90px;
+    }
+
+    .header-main .inner-wrap {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-main .inner-logo {
+        margin-bottom: 20px;
+    }
+
+    .header-main .inner-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+#dropdown-danhmuc .danhmuc-item {
+    white-space: nowrap;
+}
+
+.course-card {
+    display: flex !important;
+}
+
+.category-filter ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.category-filter button {
+    background: #fff;
+    color: var(--color-text);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.category-filter button.active {
+    background: var(--color-primary-dark);
+    color: #fff;
+    border-color: var(--color-primary-dark);
+}
+
+.category-filter button:hover:not(.active) {
+    background: var(--color-gray);
+}
+
+
+.featured-courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 48px;
+}
+
+.course-card {
+    background: #fff;
+    border-radius: 10px;
+    /* Bo góc nhẹ hơn cho phù hợp với Index */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    /* Đồng bộ bóng đổ */
+    overflow: hidden;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    /* Hiệu ứng nhô lên đồng bộ */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.course-card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.course-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--color-primary-dark);
+    /* Dùng màu Tím đậm */
+    text-align: center;
+}
+
+.course-description {
+    font-size: 0.95rem;
+    color: #666;
+    /* Dùng màu xám tối */
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.btn-detail {
+    background: var(--color-primary-dark);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: auto;
+}
+
+.btn-detail:hover {
+    background: #3a0066;
+    /* Tím đậm hơn */
+    transform: scale(1.03);
+}
+
+/* Nút chính (btn-main) - Dùng màu Vàng nổi bật */
+.btn-main {
+    background: var(--color-yellow);
+    color: var(--color-text);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-main:hover {
+    background: #fff;
+    color: var(--color-yellow);
+    border: 2px solid var(--color-yellow);
+    transform: scale(1.05);
+}
+
+.course-list {
+    list-style: none;
+    padding: 0;
+}
+
+.course-list li {
+    margin: 15px 0;
+    padding: 18px;
+    background: var(--color-gray);
+    border-left: 6px solid var(--color-primary-dark);
+    /* Viền màu Tím */
+    border-radius: 8px;
+    transition: transform 0.25s;
+}
+
+.course-list li:hover {
+    transform: translateX(6px);
+    background: #e6e9ee;
+    /* Nền xám sáng hơn */
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    min-width: 220px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+    border-radius: 6px;
+    padding: 10px 0;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.danhmuc-item {
+    padding: 10px 24px;
+    cursor: pointer;
+    font-weight: 400;
+    color: var(--color-text);
+    transition: background 0.2s;
+}
+
+.danhmuc-item:hover {
+    background: var(--color-gray);
+}
+
+.danhmuc-item.active {
+    font-weight: bold;
+    color: var(--color-primary-dark);
+    background: #f0f0f0;
+}
+
+.danhmuc-list {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 0;
+}
+
+.danhmuc-item {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.danhmuc-item.active {
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+.center-text {
+    text-align: center;
+}
+
+.featured-courses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: stretch;
+    margin: 48px auto;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 24px;
+}
+
+.course-card {
+    width: 100%;
+    max-width: unset;
+    min-width: 0;
+}
+
+@media (max-width: 1100px) {
+    .featured-courses {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .featured-courses {
+        grid-template-columns: 1fr;
+    }
+}

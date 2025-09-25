@@ -1,0 +1,740 @@
+/* Định nghĩa các biến màu */
+:root {
+    --color-yellow: #EFC455;
+    --color-gray: #F5F6F8;
+    --color-text: #404041;
+    --color-primary-dark: #4b0082; /* Tím đậm (Indigo/Purple) */
+    --color-sale: #BE2C20; /* Màu Đỏ cho sale - Giả định từ file index.html trước đó */
+}
+
+/* Reset và Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--color-gray);
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    /* Thêm padding top để tránh Header cố định che mất nội dung */
+    padding-top: 150px; 
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================================= */
+/* CSS CHUNG CHO HEADER */
+/* ========================================================= */
+
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+
+/* Header Top Bar */
+.header-top {
+    background-color: var(--color-gray);
+    color: var(--color-text);
+    font-size: 13px;
+    padding: 10px 0;
+}
+
+.header-top .inner-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header-top .inner-contact {
+    display: flex;
+    align-items: center;
+}
+
+.header-top .inner-contact .inner-phone,
+.header-top .inner-contact .inner-location {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.header-top .inner-contact i {
+    color: var(--color-yellow);
+    margin-right: 5px;
+}
+
+/* Header Main */
+.header-main {
+    padding: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-main .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header-main .inner-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-main .inner-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-main .inner-logo img {
+    height: 50px;
+    width: auto;
+}
+
+.header-main .inner-logo .inner-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-main .inner-logo .inner-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.header-main .inner-logo .inner-decs {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.header-main .inner-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.header-main .inner-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.header-main .inner-nav ul li a:hover,
+.header-main .inner-nav ul li a.active {
+    color: var(--color-primary-dark);
+}
+
+.header-main .inner-nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary-dark);
+    transition: width 0.3s ease;
+}
+
+.header-main .inner-nav ul li a:hover::after,
+.header-main .inner-nav ul li a.active::after {
+    width: 100%;
+}
+
+/* ========================================================= */
+/* CSS TRANG CHI TIẾT KHÓA HỌC (MẦM NON) */
+/* ========================================================= */
+
+.hero-kindergarten {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 48px auto 0 auto;
+    padding: 0 24px;
+    gap: 48px; /* Điều chỉnh gap lớn hơn cho hero */
+}
+.hero-kindergarten-text {
+    flex: 1 1 480px; /* Điều chỉnh flex-basis */
+    min-width: 320px;
+    max-width: 600px; /* Điều chỉnh max-width */
+}
+.hero-kindergarten-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-primary-dark); 
+    margin-bottom: 18px;
+    line-height: 1.15;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    text-align: left;
+}
+.hero-kindergarten-desc {
+    font-size: 1.18rem;
+    color: var(--color-text);
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+.hero-kindergarten-img {
+    flex: 1 1 380px; /* Điều chỉnh flex-basis */
+    min-width: 260px; /* Điều chỉnh min-width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-kindergarten-img img {
+    width: 100%;
+    max-width: 500px; /* Điều chỉnh max-width */
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 32px; /* Điều chỉnh border-radius */
+    box-shadow: 0 4px 24px rgba(75, 0, 130, 0.15); 
+    background: #fff;
+}
+.kindergarten-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 36px auto 0 auto;
+    padding: 0 24px 48px 24px;
+}
+.benefit-box {
+    background: #fff; 
+    border-radius: 18px;
+    padding: 32px 24px 24px 24px;
+    flex: 1 1 300px;
+    min-width: 260px;
+    max-width: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(75, 0, 130, 0.13);
+    position: relative;
+    border-top: 5px solid var(--color-primary-dark);
+}
+.benefit-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--color-yellow); 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.benefit-icon img {
+    width: 36px;
+    height: 36px;
+    display: block;
+}
+.benefit-text {
+    margin-top: 38px;
+    font-size: 1.25rem;
+    color: #363333; 
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Section Khác Biệt */
+.kindergarten-difference-section {
+    background: #fff; 
+    padding: 56px 0 32px 0;
+}
+.kindergarten-difference-section > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 56px;
+    flex-wrap: wrap;
+    padding: 0 24px;
+}
+.kindergarten-diff-img {
+    flex: 1 1 600px;
+    min-width: 400px;
+    max-width: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.kindergarten-diff-img img {
+    width: 100%;
+    max-width: 550px;
+    min-width: 340px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 32px;
+    box-shadow: 0 4px 32px rgba(75, 0, 130, 0.15);
+}
+.kindergarten-diff-content {
+    flex: 2 1 520px;
+    min-width: 320px;
+}
+.kindergarten-diff-content > div:first-child {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--color-primary-dark);
+    line-height: 1.2;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+}
+.kindergarten-diff-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.kindergarten-diff-content li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+.kindergarten-diff-content li span:first-child {
+    color: var(--color-yellow);
+    font-size: 1.7rem;
+    line-height: 1;
+}
+.kindergarten-diff-content li span:last-child {
+    font-size: 1.22rem;
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+/* Section Học Viên Xuất Sắc */
+.excellent-students-section {
+    background: var(--color-gray); 
+    padding: 56px 0 40px 0;
+}
+.excellent-students-section > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.excellent-students-section h2 {
+    text-align: center;
+    color: var(--color-primary-dark);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 38px;
+    text-transform: uppercase;
+}
+.excellent-students-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    justify-content: center;
+}
+.excellent-student-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(75, 0, 130, 0.08);
+    padding: 28px 22px 22px 22px;
+    max-width: 320px;
+    flex: 1 1 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.excellent-student-card img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 18px;
+}
+.excellent-student-card > div:nth-of-type(1) {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 8px;
+}
+.excellent-student-card > div:nth-of-type(2) {
+    font-size: 1rem;
+    color: #232222;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.excellent-student-card > div:nth-of-type(3) {
+    font-size: 0.98rem;
+    color: #232222;
+    text-align: center;
+}
+
+/* Section Đăng Ký Tư Vấn */
+.register-section-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 56px;
+    max-width: 1400px;
+    margin: 56px auto;
+    padding: 0 24px;
+    flex-wrap: wrap;
+}
+.register-img {
+    flex: 1 1 600px;
+    min-width: 420px;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.register-img img {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 40px;
+    box-shadow: 0 4px 24px rgba(75, 0, 130, 0.15);
+    background: #fff;
+}
+.register-form-modern-green {
+    flex: 1 1 520px;
+    max-width: 600px;
+    background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(75, 0, 130, 0.13);
+    padding: 44px 36px 36px 36px;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+.register-form-modern-green div:first-child {
+    position: absolute;
+    top: -32px;
+    right: -32px;
+    width: 110px;
+    height: 110px;
+    opacity: 0.1;
+    z-index: 0;
+}
+.register-form-modern-green h3 {
+    text-align: center;
+    color: var(--color-primary-dark);
+    font-size: 2rem;
+    margin-bottom: 28px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+.register-form-modern-green form {
+    position: relative;
+    z-index: 1;
+}
+.register-form-modern-green form > div {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+.register-form-modern-green input[type="text"],
+.register-form-modern-green input[type="tel"],
+.register-form-modern-green input[type="email"],
+.register-form-modern-green select {
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1.5px solid #d8d8d8;
+    background: #fff;
+    font-size: 1.08rem;
+}
+.register-form-modern-green input[type="text"] {
+    flex: 1 1 220px;
+}
+.register-form-modern-green input[type="tel"] {
+    flex: 1 1 140px;
+}
+.register-form-modern-green input[type="email"],
+.register-form-modern-green select {
+    width: 100%;
+    margin-bottom: 14px;
+}
+.register-form-modern-green select {
+    margin-bottom: 22px;
+}
+.register-form-modern-green button {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-radius: 24px;
+    background: linear-gradient(90deg, var(--color-primary-dark) 0%, #7c31d8 100%);
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(75, 0, 130, 0.15);
+    transition: background 0.2s,transform 0.2s;
+    text-transform: uppercase;
+}
+.register-form-modern-green button:hover {
+    background: linear-gradient(90deg, #7c31d8 0%, var(--color-primary-dark) 100%);
+}
+.register-form-modern-green div:last-child {
+    text-align: center;
+    color: var(--color-primary-dark);
+    font-size: 1.12rem;
+    margin-top: 18px;
+    opacity: 0.85;
+    z-index: 1;
+    position: relative;
+}
+
+/* ========================================================= */
+/* CSS CHUNG CHO FOOTER */
+/* ========================================================= */
+
+.footer {
+    background-color: var(--color-gray);
+    padding: 30px 0;
+}
+
+.footer .inner-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    gap: 20px;
+}
+
+.footer .inner-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 250px;
+}
+
+.footer .inner-logo img {
+    max-width: 100px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.footer .inner-logo .inner-title {
+    color: var(--color-primary-dark);
+    font-size: 35px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.footer .inner-logo .inner-decs {
+    color: #666;
+    margin-top: 5px;
+}
+
+.footer .inner-info {
+    flex: 1 1 150px;
+}
+
+.footer .inner-info .inner-title {
+    color: var(--color-primary-dark);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.footer .inner-info ul {
+    list-style-type: none;
+    padding: 0;
+    color: var(--color-text);
+}
+
+.footer .inner-info ul li {
+    margin-bottom: 10px;
+}
+
+.footer .inner-info ul li a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .inner-info ul li a:hover {
+    color: var(--color-yellow);
+}
+
+.social {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.social li {
+    list-style: none;
+}
+
+.social li a .inner-image {
+    height: 40px;
+    width: 40px;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.social li a .inner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer-top {
+    text-align: center;
+    background-color: var(--color-gray);
+    border-top: 1px solid #ddd;
+}
+
+.footer-top h2 {
+    font-size: 15px;
+    margin: 0;
+    color: var(--color-text);
+    padding: 10px 0;
+}
+
+/* ========================================================= */
+/* MEDIA QUERIES (RESPONSIVE) */
+/* ========================================================= */
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 900px) {
+    /* Khóa học Mầm non */
+    .hero-kindergarten {
+        flex-direction: column;
+        gap: 24px;
+        padding: 0 8px;
+    }
+    .hero-kindergarten-title {
+        font-size: 2rem;
+    }
+    .kindergarten-benefits {
+        flex-direction: column;
+        gap: 24px;
+        padding: 0 8px 32px 8px;
+    }
+    .benefit-box {
+        max-width: 100%;
+    }
+
+    .kindergarten-difference-section > div {
+        flex-direction: column-reverse;
+        gap: 32px;
+    }
+    .kindergarten-diff-img {
+        min-width: 100%;
+    }
+    .kindergarten-diff-content > div:first-child {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .register-section-flex {
+        flex-direction: column;
+        gap: 32px;
+        padding: 0 16px;
+    }
+    .register-img {
+        min-width: unset;
+        width: 100%;
+        max-width: 100%;
+    }
+    .register-form-modern-green {
+        max-width: 100%;
+        padding: 32px 24px;
+    }
+    .register-form-modern-green form > div {
+        flex-direction: column;
+        gap: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header Responsive */
+    .header-top {
+        display: none; /* Ẩn Top Bar trên mobile để tiết kiệm không gian */
+    }
+    body {
+        padding-top: 90px; /* Điều chỉnh padding top khi header-top bị ẩn */
+    }
+    .header-main .inner-wrap {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    .header-main .inner-logo .inner-decs {
+        display: none;
+    }
+    .header-main .inner-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 15px;
+    }
+
+    /* Footer Responsive */
+    .footer .inner-wrap {
+        flex-direction: column;
+        padding: 0 20px;
+        align-items: flex-start;
+        gap: 30px; 
+    }
+    
+    .footer .inner-logo,
+    .footer .inner-info {
+        flex-basis: 100%;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .footer .inner-logo .inner-title {
+        font-size: 28px;
+    }
+
+    /* Khóa học Mầm non - Fix nhỏ */
+    .excellent-students-list {
+        gap: 24px;
+    }
+    .excellent-student-card {
+        max-width: 100%;
+    }
+} 
