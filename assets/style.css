@@ -13,7 +13,7 @@
 
 body {
     font-family: var(--font);
-    background: var(--color-gray);
+    background: #fff;
 }
 
 a {
@@ -72,6 +72,12 @@ a {
     padding: 10px 0;
 }
 
+.header-top .container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
 .header-top .inner-wrap {
     display: flex;
     align-items: center;
@@ -84,6 +90,8 @@ a {
 .header-top .inner-contact {
     display: flex;
     align-items: center;
+    flex: 1;
+    justify-content: flex-end;
 }
 
 .header-top .inner-contact .inner-phone,
@@ -332,7 +340,9 @@ a {
     font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
-    border-bottom: 2px solid black;
+    margin: 0 auto;
+    width: 300px;
+    /* border-bottom: 2px solid black; */
     margin-bottom: 50px;
     color: #333;
 }
@@ -400,7 +410,7 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: #007bff;
+    background: #4b0082;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -432,31 +442,47 @@ a {
 }
 
 /* section-2 */
+:root {
+    --color-yellow: #EFC455;
+    --color-text: #404041;
+    --color-primary-dark: #4b0082;
+    --color-action-red: #BE2C20;
+}
+
 .section-2 {
-    padding-top: 80px;
-    padding-bottom: 80px;
-    /* background-color: var(--color-gray); */
+    padding-top: 40px;
+    background-color: #fff;
+}
+
+/* hot sale rộng hơn chút và có nền trắng */
+.section-2 .container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 .section-2 .inner-wrap {
-    background-color: var(--color-yellow);
+    background-color: #fff;
     border-radius: 20px;
-    padding: 30px;
+    padding: 30px 0; 
     max-width: 1200px;
     margin: 0 auto;
+    overflow: hidden; 
 }
 
 .section-2 .inner-title {
     text-align: center;
     font-size: 40px;
     font-weight: 700;
-    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid var(--color-primary-dark); */
     width: 500px;
     margin: 0 auto 40px auto;
+    padding-bottom: 10px;
+    color: #333;
 }
 
 .section-2 .inner-title i {
-    color: red;
+    color: #333;
     margin-left: 10px;
     margin-right: 10px;
     font-size: 40px;
@@ -464,9 +490,19 @@ a {
 
 .section-2 .inner-main {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     gap: 20px;
+
+    overflow-x: auto;
+    padding: 0 15px 20px 15px;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.section-2 .inner-main::-webkit-scrollbar {
+    display: none;
 }
 
 .section-featured {
@@ -474,22 +510,24 @@ a {
 }
 
 .section-2 .inner-card {
+    flex-shrink: 0;
     background-color: #fff;
     border-radius: 10px;
-    width: 250px;
+    width: 280px;
     height: 380px;
     display: flex;
     flex-direction: column;
     padding: 0;
     position: relative;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    /* Giảm độ đậm của box-shadow */
     overflow: hidden;
 }
 
 .section-2 .inner-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .section-2 .inner-card a {
@@ -501,7 +539,7 @@ a {
 }
 
 .section-2 .inner-card img {
-    height: 280px;
+    height: 250px;
     width: 100%;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
@@ -522,7 +560,7 @@ a {
 }
 
 .section-2 .inner-card .inner-name:hover {
-    color: var(--color-yellow);
+    color: var(--color-primary-dark);
 }
 
 .section-2 .inner-card .inner-price {
@@ -536,10 +574,9 @@ a {
 }
 
 .section-2 .inner-card .inner-price .discount {
-    color: red;
+    color: var(--color-action-red);
     font-weight: 700;
     font-size: 16px;
-    /* Tăng kích thước giá giảm */
 }
 
 .section-2 .inner-card .inner-price .first-price {
@@ -551,46 +588,57 @@ a {
     display: flex;
     justify-content: center;
     padding: 0;
+    margin-top: 30px;
     margin-bottom: 50px;
 }
 
 .button .button-3 {
-    padding: 10px 20px;
+    padding: 12px 30px;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
     border-radius: 5px;
-    background: #BE2C20;
+    background: var(--color-action-red);
     color: #fff;
     border: 0;
+    transition: all 0.3s ease;
 }
 
 .button .button-3:hover {
     background-color: var(--color-yellow);
+    color: var(--color-primary-dark);
 }
 
-/* css cho mã giảm giá hình mũi tên */
+/* css cho mã giảm giá hình mũi tên (Ribbon) */
 .section-2 .inner-card .inner-discount {
-    background-color: #BE2C20;
+    background-color: var(--color-action-red);
     position: absolute;
     top: 20px;
     left: 0;
     color: white;
     padding: 5px;
-    width: 140px;
+    width: 120px;
     height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
+    font-size: 14px;
 }
 
 .section-2 .inner-card .inner-discount i {
-    color: #EFC455;
+    color: var(--color-yellow);
     margin-right: 5px;
     font-size: 14px;
+}
+
+.section-2 .inner-card .inner-discount p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: white;
 }
 
 .section-2 .inner-card .inner-discount:after {
@@ -600,30 +648,26 @@ a {
     bottom: 0;
     width: 0;
     height: 0;
-    border-left: 18px solid white;
-    border-top: 18px solid transparent;
-    border-bottom: 18px solid transparent;
+    border-left: 15px solid white;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
 }
 
 .section-2 .inner-card .inner-discount:before {
     content: "";
     position: absolute;
-    right: -20px;
+    right: -15px;
     bottom: 0;
     width: 0;
     height: 0;
-    border-left: 20px solid #BE2C20;
-    border-top: 18px solid transparent;
-    border-bottom: 18px solid transparent;
+    border-left: 15px solid var(--color-action-red);
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
 }
 
-/* Responsive cho màn hình nhỏ */
-@media (max-width: 1100px) {
-    .section-2 .inner-card {
-        width: calc(50% - 30px);
-        /* 2 cột trên màn hình trung bình */
-    }
-}
+
+/* Responsive */
+@media (max-width: 1100px) {}
 
 @media (max-width: 768px) {
     .section-2 .inner-title {
@@ -632,9 +676,8 @@ a {
     }
 
     .section-2 .inner-card {
-        width: 90%;
-        /* 1 cột trên màn hình di động */
-        margin: 0 auto;
+        width: 220px;
+        height: 360px;
     }
 }
 
@@ -705,16 +748,17 @@ a {
 .footer {
     background-color: var(--color-gray);
     padding: 40px 0 20px 0;
-    margin-top: 40px;}
+    margin-top: 40px;
+}
 
 .footer .inner-wrap {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 40px;
-    gap: 20px;
+    gap: 30px;
 }
 
 .footer .inner-logo {
@@ -810,3 +854,313 @@ a {
     padding: 10px 0;
 }
 
+/* Responsive cho toàn bộ sao cho hợp lý */
+@media (max-width: 992px) {
+    .footer .inner-wrap {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .footer .inner-logo,
+    .footer .inner-info {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .footer .inner-info {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-4 .inner-wrap {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .section-4 .inner-content {
+        margin: 0 0 20px 0;
+        padding: 0;
+    }
+
+    .section-4 .inner-image img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .section-4 .inner-content .inner-title {
+        font-size: 30px;
+    }
+
+    .section-4 .inner-content .inner-subtitle,
+    .section-4 .inner-content .inner-desc,
+    .section-4 .inner-content .inner-desc2 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-1 .inner-wrap {
+        padding: 0 15px;
+    }
+
+    .section-1 .inner-wrap .inner-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .section-1 .inner-wrap .inner-title {
+        font-size: 1rem;
+    }
+
+    .section-1 .inner-wrap .inner-button {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-1 {
+        height: 70vh;
+        /* Giảm chiều cao của section 1 */
+    }
+
+    #youtube-banner {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .section-1 .inner-wrap {
+        max-width: 90%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .section-1 .inner-wrap .inner-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .section-1 .inner-wrap .inner-title {
+        font-size: 1rem;
+    }
+
+    .section-1 .inner-wrap .inner-button {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-4 .inner-wrap {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .section-4 .inner-content {
+        margin: 0 0 20px 0;
+        padding: 0;
+    }
+
+    .section-4 .inner-image img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .section-4 .inner-content .inner-title {
+        font-size: 30px;
+    }
+
+    .section-4 .inner-content .inner-subtitle,
+    .section-4 .inner-content .inner-desc,
+    .section-4 .inner-content .inner-desc2 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-2 .inner-card {
+        width: 100%;
+    }
+}

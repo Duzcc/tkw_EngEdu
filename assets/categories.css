@@ -35,6 +35,12 @@ body {
     padding: 10px 0;
 }
 
+.header-top .container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
 .header-top .inner-wrap {
     display: flex;
     align-items: center;
@@ -47,6 +53,8 @@ body {
 .header-top .inner-contact {
     display: flex;
     align-items: center;
+    flex: 1;
+    justify-content: flex-end;
 }
 
 .header-top .inner-contact .inner-phone,
@@ -210,36 +218,93 @@ body {
     display: flex !important;
 }
 
-.category-filter ul {
-    display: flex;
-    justify-content: center;
+.page-header {
+    padding: 30px 15px 15px 15px;
+    background: var(--color-gray);
+}
+.page-header .main-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-primary-dark);
+    margin-bottom: 10px;
+}
+.page-header p {
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin-top: 0;
+}
+
+.category-bar-container {
+    /* Đảm bảo container không bị padding/margin lạ */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.category-filter-modern {
+    background: #fff;
+    padding: 15px 0;
+    margin: 0 0 40px 0;
+    border-bottom: 2px solid var(--color-gray);
+    position: sticky;
+    top: 90px; /* Điều chỉnh vị trí dính (sticky) dưới header */
+    z-index: 100;
+}
+
+.category-filter-modern ul {
     list-style: none;
     padding: 0;
-    gap: 15px;
-    flex-wrap: wrap;
+    margin: 0;
+    display: flex;
+    /* Bật tính năng cuộn ngang */
+    overflow-x: auto;
+    /* Ẩn thanh cuộn mặc định trên một số trình duyệt */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
 }
 
-.category-filter button {
-    background: #fff;
+/* Ẩn thanh cuộn trên WebKit (Chrome, Safari) */
+.category-filter-modern ul::-webkit-scrollbar {
+    display: none;
+}
+
+.category-filter-modern ul li {
+    flex-shrink: 0; /* Ngăn các nút bị co lại */
+    margin-right: 12px;
+}
+/* Loại bỏ margin-right cho nút cuối cùng */
+.category-filter-modern ul li:last-child {
+    margin-right: 0;
+}
+
+.category-filter-modern button {
+    background: var(--color-gray);
     color: var(--color-text);
     border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px 15px;
-    font-size: 0.95rem;
-    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s;
-    white-space: nowrap;
+    white-space: nowrap; /* Đảm bảo text không bị xuống dòng */
+    transition: all 0.2s ease;
 }
 
-.category-filter button.active {
+.category-filter-modern button:hover {
+    background: #e0e0e0;
+    color: var(--color-primary-dark);
+}
+
+.category-filter-modern button.active {
     background: var(--color-primary-dark);
     color: #fff;
     border-color: var(--color-primary-dark);
+    box-shadow: 0 2px 8px rgba(75, 0, 130, 0.4);
 }
 
-.category-filter button:hover:not(.active) {
-    background: var(--color-gray);
+.category-filter-modern button.active:hover {
+    background: #7c31d8;
+    color: #fff;
 }
 
 
@@ -459,7 +524,7 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 40px;
     gap: 20px;
@@ -557,9 +622,3 @@ body {
     color: var(--color-text);
     padding: 10px 0;
 }
-
-/* @media (max-width: 1200px) {
-    .container {
-        max-width: 960px;
-    }
-} */
