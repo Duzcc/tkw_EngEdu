@@ -525,6 +525,12 @@ a {
     border-bottom: 18px solid transparent;
 }
 
+.section-3 .inner-title i {
+    color: red;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 40px;
+}
 .section-3 .inner-card .inner-discount i {
     color: #EFC455;
     margin-right: 5px;
@@ -723,13 +729,13 @@ a {
 
 .footer-top {
     text-align: center;
-    background-color: black;
+    background-color: var(--color-gray);
 }
 
 .footer-top h2 {
     font-size: 15px;
     margin: 0;
-    color: white;
+    color: var(--color-text);
     padding: 10px 0;
 }
 
