@@ -241,6 +241,7 @@ body {
     padding: 0 15px;
 }
 
+/* Thanh cuộn ngang cho category-filter-modern */
 .category-filter-modern {
     background: #fff;
     padding: 15px 0;
@@ -249,34 +250,47 @@ body {
     position: sticky;
     top: 90px; /* Điều chỉnh vị trí dính (sticky) dưới header */
     z-index: 100;
+    overflow-x: auto; /* Cho phép cuộn ngang */
+    display: flex;
+    justify-content: flex-start;
+    scroll-behavior: smooth; /* Tạo hiệu ứng cuộn mượt mà */
 }
 
+/* Đảm bảo phần tử danh mục luôn thẳng hàng khi cuộn */
 .category-filter-modern ul {
+    display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    /* Bật tính năng cuộn ngang */
-    overflow-x: auto;
-    /* Ẩn thanh cuộn mặc định trên một số trình duyệt */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
+    gap: 15px; /* Khoảng cách giữa các mục */
+    overflow-x: auto; /* Cho phép cuộn ngang */
 }
 
-/* Ẩn thanh cuộn trên WebKit (Chrome, Safari) */
+/* Định dạng thanh cuộn ngang cho ul trong category-filter-modern */
 .category-filter-modern ul::-webkit-scrollbar {
-    display: none;
+    height: 6px; /* Đặt chiều cao thanh cuộn ngang */
 }
 
+/* Định dạng thumb của thanh cuộn ngang */
+.category-filter-modern ul::-webkit-scrollbar-thumb {
+    background-color: #888 !important; /* Màu xám cho thanh cuộn (thumb) */
+    border-radius: 10px; /* Làm tròn các góc của thanh cuộn */
+    border: 2px solid transparent; /* Tạo khoảng cách giữa thanh cuộn và track */
+    background-clip: content-box; /* Tạo khoảng cách giữa thumb và track */
+}
+
+/* Màu nền cho track của thanh cuộn */
+.category-filter-modern ul::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Màu nền cho track của thanh cuộn */
+    border-radius: 10px; /* Làm tròn các góc của track */
+}
+
+/* Điều chỉnh các button nếu cần */
 .category-filter-modern ul li {
     flex-shrink: 0; /* Ngăn các nút bị co lại */
-    margin-right: 12px;
-}
-/* Loại bỏ margin-right cho nút cuối cùng */
-.category-filter-modern ul li:last-child {
-    margin-right: 0;
 }
 
+/* Định dạng cho các button trong category-filter-modern */
 .category-filter-modern button {
     background: var(--color-gray);
     color: var(--color-text);
@@ -290,11 +304,13 @@ body {
     transition: all 0.2s ease;
 }
 
+/* Hiệu ứng hover cho button */
 .category-filter-modern button:hover {
     background: #e0e0e0;
     color: var(--color-primary-dark);
 }
 
+/* Button active */
 .category-filter-modern button.active {
     background: var(--color-primary-dark);
     color: #fff;
@@ -306,6 +322,7 @@ body {
     background: #7c31d8;
     color: #fff;
 }
+
 
 
 .featured-courses {
