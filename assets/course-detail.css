@@ -440,6 +440,8 @@ a {
     text-align: center;
 }
 
+/* Đăng ký tư vấn */
+
 .register-section-flex {
     display: flex;
     align-items: center;
@@ -450,6 +452,8 @@ a {
     padding: 0 24px;
     flex-wrap: wrap;
 }
+
+/* Định dạng khối ảnh */
 .register-img {
     flex: 1 1 600px;
     min-width: 420px;
@@ -458,38 +462,45 @@ a {
     align-items: center;
     justify-content: center;
 }
+
 .register-img img {
     width: 100%;
     max-width: 600px;
     aspect-ratio: 4/3;
     object-fit: cover;
     border-radius: 40px;
-    box-shadow: 0 4px 24px rgba(75, 0, 130, 0.15);
+    box-shadow: 0 4px 24px rgba(33, 140, 116, 0.10);
     background: #fff;
 }
+
+/* Định dạng khối form */
 .register-form-modern-green {
     flex: 1 1 520px;
     max-width: 600px;
-    background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+    background: linear-gradient(135deg, #e6f7f4 0%, #fff 100%);
     border-radius: 32px;
-    box-shadow: 0 8px 32px rgba(75, 0, 130, 0.13);
+    box-shadow: 0 8px 32px rgba(33, 140, 116, 0.13);
     padding: 44px 36px 36px 36px;
     position: relative;
     overflow: hidden;
     margin: 0;
 }
-.register-form-modern-green div:first-child {
+
+/* Định dạng hình tròn trang trí nền */
+.form-bg-circle {
     position: absolute;
     top: -32px;
     right: -32px;
     width: 110px;
     height: 110px;
-    opacity: 0.1;
+    opacity: 0.13;
     z-index: 0;
 }
+
+/* Định dạng tiêu đề form */
 .register-form-modern-green h3 {
     text-align: center;
-    color: var(--color-primary-dark);
+    color: #4b0082;
     font-size: 2rem;
     margin-bottom: 28px;
     font-weight: 800;
@@ -498,66 +509,111 @@ a {
     position: relative;
     z-index: 1;
 }
-.register-form-modern-green form {
+
+/* Đảm bảo form và nội dung bên trong nằm trên hình tròn nền */
+.register-form-modern-green form,
+.form-footer-note {
     position: relative;
     z-index: 1;
 }
-.register-form-modern-green form > div {
+
+/* Định dạng nhóm input */
+.form-input-group {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
     margin-bottom: 14px;
 }
+
 .register-form-modern-green input[type="text"],
 .register-form-modern-green input[type="tel"],
 .register-form-modern-green input[type="email"],
 .register-form-modern-green select {
     padding: 14px 16px;
     border-radius: 10px;
-    border: 1.5px solid #d8d8d8;
+    border: 1.5px solid #b2dfdb;
     background: #fff;
     font-size: 1.08rem;
+    box-sizing: border-box; 
 }
-.register-form-modern-green input[type="text"] {
+
+/* Input Họ và tên */
+.form-input-group input[type="text"] {
     flex: 1 1 220px;
 }
-.register-form-modern-green input[type="tel"] {
+
+/* Input Số điện thoại */
+.form-input-group input[type="tel"] {
     flex: 1 1 140px;
 }
-.register-form-modern-green input[type="email"],
-.register-form-modern-green select {
+
+/* Input Email và Select */
+.full-width-input {
     width: 100%;
     margin-bottom: 14px;
 }
 .register-form-modern-green select {
     margin-bottom: 22px;
 }
-.register-form-modern-green button {
+
+/* Định dạng nút Đăng ký */
+.register-form-modern-green button[type="submit"] {
     width: 100%;
     padding: 15px 0;
     border: none;
     border-radius: 24px;
-    background: linear-gradient(90deg, var(--color-primary-dark) 0%, #7c31d8 100%);
+    background: var(--color-primary-dark);
     color: #fff;
     font-size: 1.25rem;
     font-weight: 800;
     letter-spacing: 1px;
     cursor: pointer;
-    box-shadow: 0 2px 12px rgba(75, 0, 130, 0.15);
-    transition: background 0.2s,transform 0.2s;
+    box-shadow: 0 2px 12px rgba(33, 140, 116, 0.10);
+    transition: background 0.2s, transform 0.2s;
     text-transform: uppercase;
 }
-.register-form-modern-green button:hover {
-    background: linear-gradient(90deg, #7c31d8 0%, var(--color-primary-dark) 100%);
+
+.register-form-modern-green button[type="submit"]:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
 }
-.register-form-modern-green div:last-child {
+
+/* Định dạng thông báo cuối form */
+.form-footer-note {
     text-align: center;
-    color: var(--color-primary-dark);
+    color: #218c74;
     font-size: 1.12rem;
     margin-top: 18px;
     opacity: 0.85;
-    z-index: 1;
-    position: relative;
+}
+
+/* Media query cho các màn hình nhỏ hơn (ví dụ: mobile) */
+@media (max-width: 768px) {
+    .register-section-flex {
+        gap: 32px;
+        margin: 32px auto;
+    }
+
+    .register-img {
+        min-width: unset;
+        max-width: 100%;
+        order: -1; /* Đưa ảnh lên trên cùng trên mobile */
+        flex: 1 1 100%;
+    }
+
+    .register-img img {
+        border-radius: 20px;
+        aspect-ratio: 16/9; /* Tối ưu hơn cho mobile */
+    }
+
+    .register-form-modern-green {
+        padding: 32px 24px 24px 24px;
+        flex: 1 1 100%;
+    }
+
+    .register-form-modern-green h3 {
+        font-size: 1.6rem;
+    }
 }
 
 /* footer */
